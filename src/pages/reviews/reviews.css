@@ -1,0 +1,12 @@
+.all-reviews {
+  height: calc(100vh - 80px);
+  width: calc(100% - 150px);
+  overflow: scroll;
+}
+
+@media (max-width: 600px) {
+  .all-reviews {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+.poster {
+  width: 350px;
+  height: 600px;
+  gap: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #1d2c38;
+  color: #e6eff6;
+  border: 1px solid #bebebe;
+}
+
+.poster > img {
+  height: calc(100% - 50px);
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.info {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.year {
+  background: #917411;
+  color: #fff;
+  padding: 5px 10px;
+}
