@@ -9,6 +9,7 @@ const initialStore = {
   filteredMovies: [],
   isLoading: false,
   sideToggled: false,
+  usp: { genres: [], title_groups: [], companies: [], sound_mix: [] },
 };
 
 export default createStore(reducer, initialStore);

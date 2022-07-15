@@ -4,7 +4,6 @@ import "./movies.css";
 import { connect } from "react-redux";
 
 function Movie({ filteredMovies }) {
-  console.log(filteredMovies);
   return (
     <div className="advance-search">
       {filteredMovies.map((item, i) => {

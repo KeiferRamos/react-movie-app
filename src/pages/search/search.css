@@ -1,14 +1,14 @@
-.advance-search {
-  height: calc(100vh - 110px);
+.search {
   width: calc(100% - 150px);
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .main-container {
   color: #fff;
-  margin: 10px;
   border: 1px solid #fff;
+  margin-bottom: 10px;
 }
 
 .main-container > h1 {
@@ -28,9 +28,22 @@
   font-size: 20px;
 }
 
+.search-btn {
+  padding: 10px 20px;
+  background: #fff;
+  border: none;
+  text-transform: uppercase;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 20px;
+}
+
 @media (max-width: 600px) {
-  .advance-search {
-    height: 100%;
+  .search {
     width: 100%;
   }
 }

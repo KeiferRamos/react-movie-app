@@ -48,7 +48,7 @@ function MovieInfo({ isLoading, dispatch }) {
 
   const getSimilar = (id) => {
     navigate(`/movie-info/${id}`);
-    window.location.reload();
+    movieRef.current.scroll(0, 0);
   };
 
   return (

@@ -49,7 +49,14 @@ function Navbar({ dispatch }) {
         <div className="search-recommended">
           {recommended.map(({ title, id }, i) => {
             return (
-              <p key={i} onClick={() => navigate(`/movie-info/${id}`)}>
+              <p
+                key={i}
+                onClick={() => {
+                  setInput("");
+                  setRecommended([]);
+                  navigate(`/movie-info/${id}`);
+                }}
+              >
                 {title}
               </p>
             );
