@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getReviews, getSingleData } from "../../api/moviesAPI";
-import { FaPlay, FaArrowUp } from "react-icons/fa";
+import { FaPlay, FaArrowUp, FaPlus } from "react-icons/fa";
 import "./movieinfo.css";
 import Reviews from "../../components/reviews/reviews";
 import Loading from "../../components/loading/loading";
 import { connect } from "react-redux";
 import { SET_LOADING } from "../../actions/action";
+import Bookmark from "../../components/bookmark/bookmark";
 
 function MovieInfo({ isLoading, dispatch }) {
   const { id } = useParams();
@@ -58,6 +59,7 @@ function MovieInfo({ isLoading, dispatch }) {
       <div className="main-info" ref={movieRef}>
         <div className="title">
           <h1>{title}</h1>
+          <Bookmark id={id} />
           <span className="year">{year}</span>
         </div>
         <div className="genres">

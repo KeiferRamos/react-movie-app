@@ -45,7 +45,15 @@
 .title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+}
+
+.title > .bookmark {
+  position: relative;
+}
+
+.year {
+  margin-left: auto;
 }
 
 .reviews {

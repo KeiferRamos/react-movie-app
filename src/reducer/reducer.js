@@ -5,7 +5,9 @@ import {
   SET_ERROR,
   SET_LOADING,
   SET_PARAMS,
+  SET_WATCHLIST,
   TOGGLED_SIDE,
+  REMOVE_WATCHLIST,
 } from "../actions/action";
 
 export default function (state, { type, payload }) {
@@ -43,6 +45,15 @@ export default function (state, { type, payload }) {
     return {
       ...state,
       usp: { genres: [], title_groups: [], companies: [], sound_mix: [] },
+    };
+  }
+  if (type == SET_WATCHLIST) {
+    return { ...state, watchlists: [...state.watchlists, payload] };
+  }
+  if (type == REMOVE_WATCHLIST) {
+    return {
+      ...state,
+      watchlists: state.watchlists.filter((item) => item != payload),
     };
   }
   return state;

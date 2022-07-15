@@ -7,39 +7,39 @@ const api_key3 = "k_o8ics53n";
 const api_key4 = "k_xlo6k01j";
 
 const fetchDatas = async (category) => {
-  const { data } = await axios.get(`${BASE_URL}/${category}/${api_key4}`);
+  const { data } = await axios.get(`${BASE_URL}/${category}/${api_key2}`);
   return data;
 };
 
 const getSingleData = async (id) => {
-  const { data } = await axios.get(`${BASE_URL}/Title/${api_key4}/${id}`);
+  const { data } = await axios.get(`${BASE_URL}/Title/${api_key2}/${id}`);
   return data;
 };
 
 const getReviews = async (id) => {
   const { data: items } = await axios.get(
-    `${BASE_URL}/Reviews/${api_key4}/${id}`
+    `${BASE_URL}/Reviews/${api_key2}/${id}`
   );
   return items;
 };
 
 const autoCompleteSearch = async (input) => {
   const { data: results } = await axios.get(
-    `${BASE_URL}/Search/${api_key4}/${input}`
+    `${BASE_URL}/Search/${api_key2}/${input}`
   );
   return results;
 };
 
 const AdvancedSearch = async (genre) => {
   const { data: results } = await axios.get(
-    `${BASE_URL}/AdvancedSearch/${api_key4}?genres=${genre}`
+    `${BASE_URL}/AdvancedSearch/${api_key2}?genres=${genre}`
   );
   return results;
 };
 
 const FilterSearching = async (query) => {
   const { data } = await axios.get(
-    `${BASE_URL}/AdvancedSearch/${api_key4}?${query}`
+    `${BASE_URL}/AdvancedSearch/${api_key2}?${query}`
   );
   return data;
 };
