@@ -2,6 +2,7 @@ import React from "react";
 import Poster from "../../components/poster/poster";
 import "./movies.css";
 import { connect } from "react-redux";
+import ArrowUp from "../../components/arrow-up/arrow.up";
 
 function Movie({ filteredMovies }) {
   return (
@@ -9,6 +10,7 @@ function Movie({ filteredMovies }) {
       {filteredMovies.map((item, i) => {
         return <Poster key={i} item={item} />;
       })}
+      <ArrowUp />
     </div>
   );
 }

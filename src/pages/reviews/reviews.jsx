@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../../api/moviesAPI";
+import ArrowUp from "../../components/arrow-up/arrow.up";
 import Reviews from "../../components/reviews/reviews";
 import "./reviews.css";
 
@@ -21,6 +22,7 @@ function AllReviews() {
           return <Reviews key={i} {...content} />;
         })}
       </div>
+      <ArrowUp />
     </div>
   );
 }

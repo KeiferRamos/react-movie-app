@@ -1,0 +1,57 @@
+.watchlist-movie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background: #233633;
+  color: #fff;
+  position: relative;
+}
+
+.watchlist-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.watchlist-title > .bookmark {
+  position: relative;
+}
+
+.watchlist-title > p {
+  margin-left: auto;
+}
+
+.title {
+  color: #fff;
+  font-weight: lighter;
+}
+
+.watchlist-info {
+  width: 320px;
+}
+
+.watchlist-movie > img {
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.runtime {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px 10px;
+  background: #b08511;
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  .watchlist-movie > img {
+    width: 320px;
+  }
+  .watchlist-info {
+    width: 320px;
+  }
+}

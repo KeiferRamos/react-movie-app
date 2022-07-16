@@ -14,7 +14,6 @@ function App({ watchlists }) {
   }, []);
 
   useEffect(() => {
-    console.log(watchlists);
     localStorage.setItem("watchlist", JSON.stringify(watchlists));
   }, [watchlists]);
 

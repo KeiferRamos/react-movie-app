@@ -2,20 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getReviews, getSingleData } from "../../api/moviesAPI";
-import { FaPlay, FaArrowUp, FaPlus } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import "./movieinfo.css";
 import Reviews from "../../components/reviews/reviews";
 import Loading from "../../components/loading/loading";
 import { connect } from "react-redux";
 import { SET_LOADING } from "../../actions/action";
 import Bookmark from "../../components/bookmark/bookmark";
+import ArrowUp from "../../components/arrow-up/arrow.up";
 
 function MovieInfo({ isLoading, dispatch }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const movieRef = useRef(null);
   const [info, setInfo] = useState({});
-  const [scrollHeight, setScrollHeight] = useState(window.pageYOffset);
   const [reviews, setReviews] = useState([]);
   const { genres, plot, image, title, year, actorList, similars } = info;
 
@@ -29,15 +29,6 @@ function MovieInfo({ isLoading, dispatch }) {
       });
     }
   }, [window.location.pathname]);
-
-  useEffect(() => {
-    const updateScrollHeight = () => {
-      setScrollHeight(window.pageYOffset);
-    };
-    window.addEventListener("scroll", updateScrollHeight);
-
-    return () => window.removeEventListener("scroll", updateScrollHeight);
-  }, [window.pageYOffset]);
 
   useEffect(() => {
     if (info.length < 0 || reviews.length < 0) {
@@ -119,9 +110,7 @@ function MovieInfo({ isLoading, dispatch }) {
           </div>
         </div>
       </div>
-      {scrollHeight > 200 && (
-        <FaArrowUp className="arrow-up" onClick={() => window.scroll(0, 0)} />
-      )}
+      <ArrowUp />
     </div>
   );
 }

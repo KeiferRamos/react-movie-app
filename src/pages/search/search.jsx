@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { FilterSearching } from "../../api/moviesAPI";
 import { CLEAR_PARAMS, FILTER_MOVIES } from "../../actions/action";
 import { useNavigate } from "react-router-dom";
+import ArrowUp from "../../components/arrow-up/arrow.up";
 
 function Search({ usp, dispatch }) {
   const [errorMsg, setErrorMsg] = useState("");
@@ -59,6 +60,7 @@ function Search({ usp, dispatch }) {
           <p>{errorMsg}</p>
         </div>
       </div>
+      <ArrowUp />
     </div>
   );
 }
