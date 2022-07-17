@@ -2,8 +2,6 @@ import {
   CLEAR_PARAMS,
   FILTER_MOVIES,
   REMOVE_PARAMS,
-  SET_ERROR,
-  SET_LOADING,
   SET_PARAMS,
   SET_WATCHLIST,
   TOGGLED_SIDE,
@@ -11,15 +9,9 @@ import {
 } from "../actions/action";
 
 export default function (state, { type, payload }) {
-  if (type == SET_ERROR) {
-    return { ...state, error: payload };
-  }
   if (type == TOGGLED_SIDE) {
     let isToggled = state.sideToggled ? false : true;
     return { ...state, sideToggled: isToggled };
-  }
-  if (type == SET_LOADING) {
-    return { ...state, isLoading: payload };
   }
   if (type == FILTER_MOVIES) {
     return { ...state, filteredMovies: payload };

@@ -9,9 +9,9 @@ import { connect } from "react-redux";
 function App({ watchlists }) {
   const nav = useNavigate();
 
-  useEffect(() => {
-    nav("/");
-  }, []);
+  // useEffect(() => {
+  //   nav("/");
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("watchlist", JSON.stringify(watchlists));

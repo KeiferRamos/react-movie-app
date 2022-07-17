@@ -1,5 +1,4 @@
 import React from "react";
-import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Bookmark from "../bookmark/bookmark";
 import "./styles.css";
@@ -12,9 +11,10 @@ function Poster({ item }) {
     <div
       className="poster"
       onClick={({ target }) => {
-        if (target.className !== "bookmark") {
-          navigate(`/movie-info/${id}`);
+        if (target.parentElement.className.baseVal == "bookmark") {
+          return;
         }
+        navigate(`/movie-info/${id}`);
       }}
     >
       {image && <img src={image} alt="movie poster" />}

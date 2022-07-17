@@ -5,13 +5,11 @@ import { getReviews, getSingleData } from "../../api/moviesAPI";
 import { FaPlay } from "react-icons/fa";
 import "./movieinfo.css";
 import Reviews from "../../components/reviews/reviews";
-import Loading from "../../components/loading/loading";
 import { connect } from "react-redux";
-import { SET_LOADING } from "../../actions/action";
 import Bookmark from "../../components/bookmark/bookmark";
 import ArrowUp from "../../components/arrow-up/arrow.up";
 
-function MovieInfo({ isLoading, dispatch }) {
+function MovieInfo({ watchlists }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const movieRef = useRef(null);
@@ -30,27 +28,19 @@ function MovieInfo({ isLoading, dispatch }) {
     }
   }, [window.location.pathname]);
 
-  useEffect(() => {
-    if (info.length < 0 || reviews.length < 0) {
-      dispatch({ type: SET_LOADING, payload: true });
-    } else {
-      dispatch({ type: SET_LOADING, payload: false });
-    }
-  }, [info, reviews]);
-
   const getSimilar = (id) => {
     navigate(`/movie-info/${id}`);
+    window.scroll(0, 0);
     movieRef.current.scroll(0, 0);
   };
 
   return (
     <div className="movie-info">
-      {isLoading && <Loading />}
       <img src={image} alt="" />
       <div className="main-info" ref={movieRef}>
         <div className="title">
           <h1>{title}</h1>
-          <Bookmark id={id} />
+          {watchlists && <Bookmark id={id} />}
           <span className="year">{year}</span>
         </div>
         <div className="genres">

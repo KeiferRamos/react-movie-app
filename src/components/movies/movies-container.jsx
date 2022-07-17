@@ -2,26 +2,17 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { fetchDatas } from "../../api/moviesAPI";
-import { connect } from "react-redux";
-import { SET_ERROR } from "../../actions/action";
 import Poster from "../poster/poster";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./styles.css";
 
-function MoviesContainer({ category, dispatch }) {
+function MoviesContainer({ category }) {
   const [moviesData, setMoviesData] = useState([]);
   const [position, setPosition] = useState(0);
 
   useEffect(() => {
-    fetchDatas(category).then(({ errorMessage, items }) => {
-      if (errorMessage) {
-        dispatch({
-          type: SET_ERROR,
-          payload: { type: "fetch_error", text: errorMessage },
-        });
-      } else {
-        setMoviesData(items);
-      }
+    fetchDatas(category).then(({ items }) => {
+      setMoviesData(items);
     });
   }, []);
 
@@ -53,4 +44,4 @@ function MoviesContainer({ category, dispatch }) {
   );
 }
 
-export default connect((state) => state)(MoviesContainer);
+export default MoviesContainer;

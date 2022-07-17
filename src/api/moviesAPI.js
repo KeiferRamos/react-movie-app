@@ -5,6 +5,7 @@ const api_key1 = "k_v02me0d7";
 const api_key2 = "k_36kb43e6";
 const api_key3 = "k_o8ics53n";
 const api_key4 = "k_xlo6k01j";
+const api_key5 = "k_i85uc3to";
 
 const fetchDatas = async (category) => {
   const { data } = await axios.get(`${BASE_URL}/${category}/${api_key3}`);

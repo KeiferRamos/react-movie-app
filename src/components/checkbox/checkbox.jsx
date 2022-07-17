@@ -13,13 +13,11 @@ function CheckBoxContainer({ items, params, dispatch, usp }) {
   return (
     <div className="container">
       {items.map(({ title, value }, i) => {
-        const ischecked = usp[params].includes(value) ? true : false;
         return (
           <div key={i}>
             <input
               type="checkbox"
               onClick={(e) => addParams(e)}
-              name={title}
               value={value}
             />
             <label htmlFor={title}>{title}</label>

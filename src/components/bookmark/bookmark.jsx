@@ -11,7 +11,13 @@ function Bookmark({ dispatch, watchlists, id }) {
     });
   };
 
-  return <FaPlus className="bookmark" onClick={() => bookmarkItem()} />;
+  return (
+    <div>
+      {!watchlists.includes(id) && (
+        <FaPlus className="bookmark" onClick={() => bookmarkItem()} />
+      )}
+    </div>
+  );
 }
 
 export default connect((state) => state)(Bookmark);
